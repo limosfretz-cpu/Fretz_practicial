@@ -1,0 +1,1287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Campus Officials | ISUFST San Enrique</title>
+
+<style>
+
+/* =========================================
+   1. GLOBAL SETTINGS
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #000000;
+    --secondary: #333333;
+    --accent: #777777;
+    --background: #f2f2f2;
+    --white: #ffffff;
+    --text: #222222;
+    --muted: #777777;
+    --border: #dddddd;
+    --shadow: 0 8px 25px rgba(0,0,0,0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   2. HERO HEADER
+========================================= */
+
+.hero {
+    min-height: 370px;
+    padding: 75px 20px 105px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0,0,0,0.97),
+            rgba(35,35,35,0.90)
+        ),
+        url('campus.jpg');
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border: 55px solid rgba(255,255,255,0.07);
+    border-radius: 50%;
+    top: -190px;
+    right: -70px;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    bottom: -130px;
+    left: -70px;
+}
+
+.hero-content {
+    max-width: 1250px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-label {
+    display: inline-block;
+    padding: 7px 17px;
+    margin-bottom: 20px;
+
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 30px;
+
+    color: #dddddd;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 800px;
+    font-size: clamp(35px, 5vw, 55px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 680px;
+    color: #dddddd;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   3. NAVIGATION BAR
+========================================= */
+
+.navbar {
+    width: 90%;
+    max-width: 1250px;
+    margin: -35px auto 0;
+    padding: 14px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.nav-brand {
+    color: var(--primary);
+    font-size: 15px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.nav-brand span {
+    color: #666666;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.nav-links a {
+    padding: 10px 13px;
+    border-radius: 7px;
+    color: #555555;
+    font-size: 12px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: var(--primary);
+    color: white;
+}
+
+
+/* =========================================
+   4. INTRODUCTION
+========================================= */
+
+.page-intro {
+    max-width: 1250px;
+    width: 90%;
+    margin: 70px auto 40px;
+}
+
+.page-intro .eyebrow {
+    color: #555555;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.page-intro h2 {
+    color: var(--primary);
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 800;
+    margin: 7px 0 12px;
+}
+
+.page-intro p {
+    max-width: 750px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* =========================================
+   5. CONTENT CONTAINER
+========================================= */
+
+.content-list {
+    max-width: 1250px;
+    width: 90%;
+    margin: 0 auto 80px;
+}
+
+.content-block {
+    margin-bottom: 40px;
+    padding: 35px;
+
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+
+    scroll-margin-top: 110px;
+    transition: 0.3s ease;
+}
+
+.content-block:hover {
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+
+/* =========================================
+   6. SECTION HEADINGS
+========================================= */
+
+.content-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.content-number {
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    width: 52px;
+    height: 52px;
+
+    color: #ffffff;
+    background: #222222;
+    border: 1px solid #333333;
+    border-radius: 12px;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.content-heading h2 {
+    color: var(--primary);
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.content-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================================
+   7. VMGO CARDS
+========================================= */
+
+.vmgo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.vmgo-card {
+    padding: 25px;
+    background: #f7f7f7;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.vmgo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: #999999;
+}
+
+.vmgo-card h3 {
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.vmgo-card p {
+    color: #555555;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.vmgo-card ul {
+    padding-left: 22px;
+    color: #555555;
+    font-size: 14px;
+}
+
+.vmgo-card li {
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+
+/* =========================================
+   8. OFFICIALS GALLERY
+========================================= */
+
+.officials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.official-card {
+    overflow: hidden;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.official-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.13);
+}
+
+.official-card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    background: #e8e8e8;
+    transition: transform 0.4s ease;
+}
+
+.official-card:hover img {
+    transform: scale(1.04);
+}
+
+.official-info {
+    padding: 20px 15px;
+}
+
+.official-info h3 {
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.official-info .position {
+    display: inline-block;
+    padding: 5px 14px;
+    background: #eeeeee;
+    border-radius: 20px;
+    color: #444444;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   9. SUBHEADINGS
+========================================= */
+
+.section-description {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   10. FOOTER
+========================================= */
+
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: #000000;
+    color: white;
+    border-top: 5px solid #555555;
+}
+
+footer strong {
+    color: white;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+footer p {
+    margin: 6px 0;
+    color: #cccccc;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   11. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .officials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 310px;
+        padding: 65px 25px 85px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .navbar {
+        width: 92%;
+        padding: 13px 15px;
+    }
+
+    .nav-links {
+        gap: 4px;
+        justify-content: flex-start;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+
+    .page-intro {
+        width: 92%;
+        margin-top: 50px;
+    }
+
+    .content-list {
+        width: 92%;
+    }
+
+    .content-block {
+        padding: 25px;
+    }
+
+    .content-heading h2 {
+        font-size: 21px;
+    }
+
+    .official-card img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .hero {
+        min-height: auto;
+        padding: 60px 20px 75px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-label {
+        font-size: 10px;
+    }
+
+    .navbar {
+        width: 94%;
+        top: 5px;
+    }
+
+    .nav-brand {
+        font-size: 13px;
+    }
+
+    .nav-links {
+        justify-content: flex-start;
+        gap: 3px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+        padding: 7px 9px;
+    }
+
+    .page-intro {
+        width: 94%;
+        margin-top: 45px;
+    }
+
+    .content-list {
+        width: 94%;
+    }
+
+    .content-block {
+        padding: 20px 15px;
+        margin-bottom: 25px;
+        border-radius: 13px;
+    }
+
+    .content-heading {
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .content-number {
+        width: 40px;
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .content-heading h2 {
+        font-size: 18px;
+    }
+
+    .content-heading p {
+        font-size: 12px;
+    }
+
+    .vmgo-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .vmgo-card {
+        padding: 20px;
+    }
+
+    .officials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .official-card img {
+        height: 190px;
+    }
+
+    .official-info {
+        padding: 15px 8px;
+    }
+
+    .official-info h3 {
+        font-size: 13px;
+    }
+
+    .official-info .position {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    footer {
+        padding: 30px 15px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================
+     HERO HEADER
+========================================= -->
+
+<header class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            ISUFST • San Enrique Campus
+        </span>
+
+        <h1>
+            Campus Officials
+        </h1>
+
+        <p>
+            Iloilo State University of Fisheries Science and Technology
+            <br>
+            San Enrique Campus
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
+<nav class="navbar">
+
+    <a href="#home" class="nav-brand">
+        ISUFST <span>OFFICIALS</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="#home">Home</a>
+        <a href="#vmgo">VMGO</a>
+        <a href="#university">University</a>
+        <a href="#campus">Campus</a>
+        <a href="#departments">Departments</a>
+        <a href="#ccs">CCS Faculty & Staff</a>
+        <a href="event.html">Gallery</a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================
+     INTRODUCTION
+========================================= -->
+
+<div class="page-intro">
+
+    <span class="eyebrow">
+        Our University, Our Community
+    </span>
+
+    <h2>
+        Meet Our Campus Officials
+    </h2>
+
+    <p>
+        Get to know the university leaders, campus administrators,
+        department deans, faculty members, and staff who contribute
+        to the growth and development of ISUFST San Enrique Campus.
+    </p>
+
+</div>
+
+
+<!-- =========================================
+     01. VMGO
+========================================= -->
+
+<main class="content-list" id="vmgo">
+
+    <section class="content-block">
+
+        <div class="content-heading">
+
+            <span class="content-number">01</span>
+
+            <div>
+                <h2>Vision, Mission, Goals and Objectives</h2>
+
+                <p>
+                    The university's direction and the objectives
+                    of the Bachelor of Science in Information Technology.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="vmgo-grid">
+
+            <!-- VISION -->
+
+            <article class="vmgo-card">
+
+                <h3>Vision</h3>
+
+                <p>
+                    A leading and empowering research university in
+                    fisheries, agriculture, education, and technology
+                    in Southeast Asia by 2030.
+                </p>
+
+            </article>
+
+
+            <!-- MISSION -->
+
+            <article class="vmgo-card">
+
+                <h3>Mission</h3>
+
+                <p>
+                    To produce globally competitive and empowered
+                    graduates in fisheries, agriculture, education,
+                    maritime studies, arts, sciences, and technology,
+                    and to capacitate individuals and communities
+                    towards sufficiency for nation building.
+                </p>
+
+            </article>
+
+
+            <!-- GOALS -->
+
+            <article class="vmgo-card">
+
+                <h3>Goals</h3>
+
+                <p>
+                    The Bachelor of Science and Information Technology
+                    aims to prepare students with broad, integrated IT
+                    knowledge thereby producing highly educated and
+                    innovative graduates who can bridge technology
+                    with other disciplines in their organization.
+                </p>
+
+            </article>
+
+
+            <!-- OBJECTIVES -->
+
+            <article class="vmgo-card">
+
+                <h3>Objectives</h3>
+
+                <p>
+                    Specifically, the BSIT program aims to:
+                </p>
+
+                <ul>
+
+                    <li>
+                        To produce globally competitive graduates
+                        adhering to the current IT industry standard.
+                    </li>
+
+                    <li>
+                        Help students learn how to evaluate current
+                        and emerging technologies, and identify user
+                        needs; design user-friendly interface, apply,
+                        configure and manage technologies, and assess
+                        the impact of technologies on the individuals,
+                        organization and society.
+                    </li>
+
+                    <li>
+                        Inculcate core life values and right attitude
+                        to continually uplift professionalism.
+                    </li>
+
+                </ul>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     02. UNIVERSITY LEVEL
+========================================= -->
+
+<main class="content-list" id="university">
+
+    <section class="content-block">
+
+        <div class="content-heading">
+
+            <span class="content-number">02</span>
+
+            <div>
+                <h2>University Level</h2>
+
+                <p>
+                    The university leadership responsible for
+                    guiding the institution.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="officials-grid">
+
+            <article class="official-card">
+
+                <img
+                    src="DrSiason.png"
+                    alt="Dr. Nordy D. Siason"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Dr. Nordy D. Siason</h3>
+
+                    <p class="position">
+                        University President
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     03. CAMPUS LEVEL
+========================================= -->
+
+<main class="content-list" id="campus">
+
+    <section class="content-block">
+
+        <div class="content-heading">
+
+            <span class="content-number">03</span>
+
+            <div>
+                <h2>Campus Level</h2>
+
+                <p>
+                    Campus administration and administrative personnel
+                    of ISUFST San Enrique Campus.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="officials-grid">
+
+            <!-- CAMPUS ADMINISTRATOR -->
+
+            <article class="official-card">
+
+                <img
+                    src="campusad.png"
+                    alt="Michael B. Dizon"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Michael B. Dizon</h3>
+
+                    <p class="position">
+                        Campus Administrator
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- ADMINISTRATIVE OFFICER -->
+
+            <article class="official-card">
+
+                <img
+                    src="administrative-officer.jpg"
+                    alt="Melby P. Parreño"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Melby P. Parreño</h3>
+
+                    <p class="position">
+                        Administrative Officer
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     04. DEPARTMENT LEVEL
+========================================= -->
+
+<main class="content-list" id="departments">
+
+    <section class="content-block">
+
+        <div class="content-heading">
+
+            <span class="content-number">04</span>
+
+            <div>
+                <h2>Department Level</h2>
+
+                <p>
+                    Deans of the different departments.
+                </p>
+            </div>
+
+        </div>
+
+        <p class="section-description">
+            Deans of the Different Departments
+        </p>
+
+        <div class="officials-grid">
+
+            <!-- DEAN 1 -->
+
+            <article class="official-card">
+
+                <img
+                    src="dean-1.png"
+                    alt="Wenda P. Panes"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Wenda P. Panes</h3>
+
+                    <p class="position">Dean</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- DEAN 2 -->
+
+            <article class="official-card">
+
+                <img
+                    src="dean-2.jpg"
+                    alt="Noli L. Gerona"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Noli L. Gerona</h3>
+
+                    <p class="position">Dean</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- DEAN 3 -->
+
+            <article class="official-card">
+
+                <img
+                    src="dean-3.jpg"
+                    alt="Janice H. Ching"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Janice H. Ching</h3>
+
+                    <p class="position">Dean</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- DEAN 4 -->
+
+            <article class="official-card">
+
+                <img
+                    src="dean-4.jpg"
+                    alt="Rene T. Estomo"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Rene T. Estomo</h3>
+
+                    <p class="position">Dean</p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     05. COLLEGE OF COMPUTER STUDIES
+========================================= -->
+
+<main class="content-list" id="ccs">
+
+    <section class="content-block">
+
+        <div class="content-heading">
+
+            <span class="content-number">05</span>
+
+            <div>
+                <h2>College of Computer Studies</h2>
+
+                <p>
+                    Faculty members and staff of the College
+                    of Computer Studies.
+                </p>
+            </div>
+
+        </div>
+
+        <p class="section-description">
+            Faculty and Staff
+        </p>
+
+        <div class="officials-grid">
+
+            <!-- FACULTY 1 -->
+
+            <article class="official-card">
+
+                <img
+                    src="faculty-1.png"
+                    alt="Dr. Analiza G. Alingalan"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Dr. Analiza G. Alingalan</h3>
+
+                    <p class="position">Faculty</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- FACULTY 2 -->
+
+            <article class="official-card">
+
+                <img
+                    src="faculty-2.png"
+                    alt="Dr. Weena P. Bulnes"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Dr. Weena P. Bulnes</h3>
+
+                    <p class="position">Faculty</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- FACULTY 3 -->
+
+            <article class="official-card">
+
+                <img
+                    src="faculty-3.png"
+                    alt="Dr. Dythne P. Dacudao"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Dr. Dythne P. Dacudao</h3>
+
+                    <p class="position">Faculty</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- FACULTY 4 -->
+
+            <article class="official-card">
+
+                <img
+                    src="faculty-4.png"
+                    alt="Instr. Dave Allan Tagacay"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Instr. Dave Allan Tagacay</h3>
+
+                    <p class="position">Faculty</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- FACULTY 5 -->
+
+            <article class="official-card">
+
+                <img
+                    src="faculty-5.png"
+                    alt="Dr. Ian P. Sugatan"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Dr. Ian P. Sugatan</h3>
+
+                    <p class="position">Faculty</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- FACULTY 6 -->
+
+            <article class="official-card">
+
+                <img
+                    src="faculty-6.png"
+                    alt="Instr. Ivan Silvestre"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Instr. Ivan Silvestre</h3>
+
+                    <p class="position">Faculty</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- STAFF 1 -->
+
+            <article class="official-card">
+
+                <img
+                    src="staff-1.png"
+                    alt="Andrea P. Delos Santos"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Andrea P. Delos Santos</h3>
+
+                    <p class="position">Staff</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- STAFF 2 -->
+
+            <article class="official-card">
+
+                <img
+                    src="staff-2.png"
+                    alt="Jay Michael O. Borcillo"
+                    loading="lazy"
+                >
+
+                <div class="official-info">
+
+                    <h3>Jay Michael O. Borcillo</h3>
+
+                    <p class="position">Staff</p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <p>
+        <strong>ISUFST San Enrique Campus</strong>
+    </p>
+
+    <p>Campus Officials and Administration</p>
+
+    <p>
+        &copy; 2026 All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,750 @@
+
+/* =========================================
+   1. GENERAL SETTINGS
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #000000;
+    --secondary: #333333;
+    --accent: #777777;
+    --background: #f2f2f2;
+    --white: #ffffff;
+    --text: #222222;
+    --muted: #777777;
+    --border: #dddddd;
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   2. HEADER / HERO SECTION
+========================================= */
+
+header {
+    min-height: 340px;
+    background:
+        linear-gradient(120deg,
+        rgba(0, 0, 0, 0.97),
+        rgba(35, 35, 35, 0.90)),
+        url('campus.jpg');
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: var(--white);
+
+    padding: 65px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    right: -70px;
+    bottom: -130px;
+}
+
+header h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+header p {
+    font-size: 16px;
+    color: #dddddd;
+    margin: 3px 0;
+    position: relative;
+    z-index: 1;
+}
+
+header p:last-child {
+    color: #bbbbbb;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   3. NAVIGATION BAR
+========================================= */
+
+.navbar {
+    background: var(--primary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 20px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.20);
+}
+
+.navbar a {
+    color: #eeeeee;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 11px 22px;
+    border-radius: 6px;
+
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   4. GENERAL SECTIONS
+========================================= */
+
+section {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 65px auto;
+}
+
+section h2 {
+    color: var(--primary);
+    text-align: center;
+
+    font-size: 29px;
+    font-weight: 800;
+
+    margin-bottom: 12px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+
+    width: 65px;
+    height: 4px;
+
+    background: var(--accent);
+
+    margin: 13px auto 25px;
+    border-radius: 10px;
+}
+
+.subheading {
+    text-align: center;
+    color: var(--muted);
+
+    font-size: 15px;
+    font-weight: 500;
+
+    margin-top: -12px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   5. VMGO SECTION
+========================================= */
+
+.vmgo-section {
+    background: var(--white);
+
+    width: 90%;
+    max-width: 1250px;
+
+    padding: 45px;
+
+    border-radius: 18px;
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+}
+
+.vmgo-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.vmgo-card {
+    background: #f5f5f5;
+
+    padding: 30px;
+
+    border-radius: 12px;
+    border: 1px solid var(--border);
+
+    border-top: 4px solid var(--primary);
+
+    transition: 0.3s ease;
+}
+
+.vmgo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-top-color: var(--accent);
+}
+
+.vmgo-card h3 {
+    color: var(--primary);
+
+    font-size: 21px;
+    font-weight: 800;
+
+    margin-bottom: 13px;
+}
+
+.vmgo-card p,
+.vmgo-card li {
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.vmgo-card ul {
+    padding-left: 20px;
+    margin-top: 12px;
+}
+
+.vmgo-card li {
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   6. OFFICIALS GRID
+========================================= */
+
+.officials {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 25px;
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   7. OFFICIAL PROFILE CARDS
+========================================= */
+
+.official {
+    background: var(--white);
+
+    text-align: center;
+
+    padding: 30px 22px;
+
+    border-radius: 15px;
+    border: 1px solid var(--border);
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.official::before {
+    content: '';
+    display: block;
+
+    height: 5px;
+    width: 100%;
+
+    background: var(--primary);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: 0.3s ease;
+}
+
+.official:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.13);
+}
+
+.official:hover::before {
+    background: var(--accent);
+}
+
+.official img {
+    width: 175px;
+    height: 175px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid #eeeeee;
+
+    margin: 8px auto 18px;
+
+    background: #eee;
+
+    transition: 0.3s ease;
+}
+
+.official:hover img {
+    border-color: var(--accent);
+    transform: scale(1.04);
+}
+
+.official h3 {
+    color: var(--primary);
+
+    font-size: 17px;
+    font-weight: 800;
+
+    margin-bottom: 6px;
+}
+
+.position {
+    display: inline-block;
+
+    color: #333333;
+
+    background: #eeeeee;
+
+    padding: 5px 16px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   8. EVENT SECTION
+========================================= */
+
+.event-section {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 65px auto;
+
+    background: var(--white);
+
+    padding: 45px;
+
+    border-radius: 18px;
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+}
+
+.event-section h2 {
+    text-align: center;
+    color: var(--primary);
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.event-description {
+    text-align: center;
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   9. EVENT GALLERY
+========================================= */
+
+.event-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.event-card {
+    background: #f5f5f5;
+
+    border-radius: 13px;
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+
+    transition: 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+}
+
+.event-card img {
+    width: 100%;
+    height: 240px;
+
+    object-fit: cover;
+    display: block;
+
+    transition: 0.4s ease;
+}
+
+.event-card:hover img {
+    transform: scale(1.04);
+}
+
+.event-info {
+    padding: 22px;
+    text-align: center;
+}
+
+.event-info h3 {
+    color: var(--primary);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.event-info p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   10. MEDIA TITLES
+========================================= */
+
+.media-title {
+    color: var(--primary);
+    text-align: center;
+
+    font-size: 23px;
+    font-weight: 800;
+
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   11. PHOTO GALLERY
+========================================= */
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.photo-card {
+    background: var(--white);
+
+    border-radius: 13px;
+    overflow: hidden;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+
+    transition: 0.3s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+    display: block;
+}
+
+.photo-card h3 {
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 17px;
+}
+
+
+/* =========================================
+   12. VIDEO GALLERY
+========================================= */
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.video-card {
+    background: var(--white);
+
+    border-radius: 13px;
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+
+    transition: 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.video-card video {
+    width: 100%;
+    height: 300px;
+
+    display: block;
+    background: #000;
+}
+
+.video-info {
+    padding: 22px;
+    text-align: center;
+}
+
+.video-info h3 {
+    color: var(--primary);
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.video-info p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   13. FOOTER
+========================================= */
+
+footer {
+    background: #000000;
+
+    color: var(--white);
+
+    text-align: center;
+
+    padding: 35px 20px;
+    margin-top: 80px;
+
+    border-top: 4px solid #555555;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 5px 0;
+    color: #cccccc;
+}
+
+
+/* =========================================
+   14. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .vmgo-container {
+        grid-template-columns: 1fr;
+    }
+
+    .event-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    header {
+        min-height: 280px;
+        padding: 45px 20px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+        padding: 9px 13px;
+    }
+
+    section {
+        width: 92%;
+        margin: 45px auto;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    .vmgo-section {
+        width: 92%;
+        padding: 25px;
+    }
+
+    .officials {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .official {
+        padding: 25px 15px;
+    }
+
+    .official img {
+        width: 145px;
+        height: 145px;
+    }
+
+    .event-section {
+        width: 92%;
+        padding: 25px;
+    }
+
+    .event-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .video-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card video {
+        height: 250px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    .navbar {
+        gap: 3px;
+    }
+
+    .navbar a {
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+
+    .vmgo-section,
+    .event-section {
+        padding: 20px;
+    }
+
+    .vmgo-card {
+        padding: 22px;
+    }
+
+    .officials {
+        grid-template-columns: 1fr;
+    }
+
+    .official img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card img {
+        height: 230px;
+    }
+
+    .video-card video {
+        height: 220px;
+    }
+
+    footer {
+        padding: 25px 15px;
+    }
+
+}
